@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+    </button>
+    <h1 class="project-title">AI Avatar Generator</h1>
+    <div class="container">
+        <div class="card">
+            <form id="generateForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <select id="age" name="age" required>
+                            <option value="young">Young</option>
+                            <option value="middle-aged">Middle-aged</option>
+                            <option value="elderly">Elderly</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nationality">Nationality:</label>
+                        <select id="nationality" name="nationality" required>
+                            <option value="northern european">Northern European</option>
+                            <option value="southern european">Southern European</option>
+                            <option value="eastern european">Eastern European</option>
+                            <option value="caucasus">Caucasus</option>
+                            <option value="asian">Asian</option>
+                            <option value="african">African</option>
+                            <option value="middle eastern">Middle Eastern</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="hairstyle">Hairstyle:</label>
+                        <select id="hairstyle" name="hairstyle" required>
+                            <option value="short black">Short Black</option>
+                            <option value="short brown">Short Brown</option>
+                            <option value="short blonde">Short Blonde</option>
+                            <option value="short red">Short Red</option>
+                            <option value="medium black">Medium Black</option>
+                            <option value="medium brown">Medium Brown</option>
+                            <option value="medium blonde">Medium Blonde</option>
+                            <option value="medium red">Medium Red</option>
+                            <option value="long black">Long Black</option>
+                            <option value="long brown">Long Brown</option>
+                            <option value="long blonde">Long Blonde</option>
+                            <option value="long red">Long Red</option>
+                            <option value="wavy black">Wavy Black</option>
+                            <option value="wavy brown">Wavy Brown</option>
+                            <option value="wavy blonde">Wavy Blonde</option>
+                            <option value="wavy red">Wavy Red</option>
+                            <option value="curly black">Curly Black</option>
+                            <option value="curly brown">Curly Brown</option>
+                            <option value="curly blonde">Curly Blonde</option>
+                            <option value="curly red">Curly Red</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="adjective">Expression:</label>
+                        <select id="adjective" name="adjective" required>
+                            <option value="neutral">Neutral</option>
+                            <option value="happy">Happy</option>
+                            <option value="serious">Serious</option>
+                            <option value="peaceful">Peaceful</option>
+                            <option value="friendly">Friendly</option>
+                            <option value="angry">Angry</option>
+                            <option value="sad">Sad</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="accessory">Accessory:</label>
+                        <select id="accessory" name="accessory">
+                            <option value="">None</option>
+                            <option value="glasses">Glasses</option>
+                            <option value="elegant glasses">Elegant Glasses</option>
+                            <option value="sunglasses">Sunglasses</option>
+                            <option value="suit">Suit</option>
+                            <option value="business suit">Business Suit</option>
+                            <option value="blazer">Blazer</option>
+                            <option value="tshirt">T-Shirt</option>
+                            <option value="hoodie">Hoodie</option>
+                            <option value="casual wear">Casual Wear</option>
+                            <option value="piercing">Piercing</option>
+                            <option value="hair clips">Hair Clips</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="profession">Profession:</label>
+                        <select id="profession" name="profession">
+                            <option value="">None</option>
+                            <option value="software engineer">Software Engineer</option>
+                            <option value="qa engineer">QA Engineer</option>
+                            <option value="devops engineer">DevOps Engineer</option>
+                            <option value="product manager">Product Manager</option>
+                            <option value="ui ux designer">UI/UX Designer</option>
+                            <option value="business analyst">Business Analyst</option>
+                            <option value="data scientist">Data Scientist</option>
+                            <option value="system administrator">System Administrator</option>
+                            <option value="it support">IT Support Engineer</option>
+                            <option value="security specialist">Cybersecurity Specialist</option>
+                            <option value="lawyer">Lawyer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mjVersion">Midjourney Version:</label>
+                        <select id="mjVersion" name="mjVersion" required>
+                            <option value="5.1">5.1</option>
+                            <option value="5.2">5.2</option>
+                            <option value="6.0">6.0</option>
+                            <option value="6.1">6.1</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="stylize">Stylize:</label>
+                        <select id="stylize" name="stylize" required>
+                            <option value="100">100</option>
+                            <option value="250">250</option>
+                            <option value="500">500</option>
+                            <option value="750">750</option>
+                            <option value="1000" selected>1000</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quality">Quality:</label>
+                        <select id="quality" name="quality" required>
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="chaos">Chaos:</label>
+                        <select id="chaos" name="chaos" required>
+                            <option value="0" selected>0</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="75">75</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="aspectRatio">Aspect Ratio:</label>
+                        <select id="aspectRatio" name="aspectRatio" required>
+                            <option value="1:1" selected>1:1 (Square)</option>
+                            <option value="2:3">2:3 (Portrait)</option>
+                            <option value="3:2">3:2 (Landscape)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="raw">Raw Mode:</label>
+                        <select id="raw" name="raw" required>
+                            <option value="false" selected>Off</option>
+                            <option value="true">On</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="seedGroup" style="display: none;">
+                        <label for="seed">Seed (v5.x only):</label>
+                        <input type="text" id="seed" name="seed" pattern="\d*" placeholder="Enter seed value">
+                    </div>
+
+                    <div class="form-group" id="referenceGroup" style="display: none;">
+                        <label for="referenceUrl">Reference Image URL (v6.x only):</label>
+                        <input type="url" id="referenceUrl" name="referenceUrl" placeholder="Enter image URL">
+                        <label for="referenceWeight">Reference Weight (1-15):</label>
+                        <input type="number" id="referenceWeight" name="referenceWeight" min="1" max="15" value="10">
+                    </div>
+                </div>
+
+                <button type="submit" id="generateButton">Generate Avatar</button>
+            </form>
+        </div>
+
+        <div class="seed-section card">
+            <h2>Seed</h2>
+            <div class="seed-input">
+                <input type="text" id="seedInput" placeholder="Enter seed value (only for v5.1)" pattern="\d*">
+                <button id="applySeed">Apply</button>
+            </div>
+
+            <h3>Recent Seeds</h3>
+            <div id="seedHistory" class="seed-history">
+                <!-- Seeds will be added here dynamically -->
+            </div>
+        </div>
+
+        <div class="collage-section">
+            <h2>Collage of 4 variants</h2>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

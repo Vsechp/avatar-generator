@@ -1,0 +1,395 @@
+:root {
+  /* Modern Color Palette 2025 */
+  --primary: #2D3436;
+  --secondary: #636E72;
+  --accent: #00B894;
+  --background: linear-gradient(135deg, #1a1b1e 0%, #2C3E50 100%);
+  --surface: rgba(255, 255, 255, 0.08);
+  --error: #D63031;
+  --success: #00B894;
+  --text-primary: #ECF0F1;
+  --text-secondary: #BDC3C7;
+  --border-radius: 12px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --form-bg: rgba(255, 255, 255, 0.04);
+  /* Add transition variables */
+  --transition-speed: 0.3s;
+  --transition-timing: ease;
+}
+
+[data-theme="light"] {
+  --background: linear-gradient(135deg, #ECF0F1 0%, #BDC3C7 100%);
+  --surface: rgba(255, 255, 255, 0.95);
+  --text-primary: #2D3436;
+  --text-secondary: #636E72;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --form-bg: rgba(255, 255, 255, 0.92);
+  --shadow: 0 4px 15px -1px rgba(0, 0, 0, 0.1);
+  --border-color: rgba(0, 184, 148, 0.5);
+}
+
+/* Add transition to all elements */
+*, *::before, *::after {
+  transition: background var(--transition-speed) var(--transition-timing),
+              color var(--transition-speed) var(--transition-timing),
+              border-color var(--transition-speed) var(--transition-timing),
+              box-shadow var(--transition-speed) var(--transition-timing);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text-primary);
+  line-height: 1.5;
+  padding: 2rem;
+}
+
+.project-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--accent), #74b9ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow);
+}
+
+[data-theme="light"] .card {
+  border: 2px solid var(--border-color);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.form-group {
+  background: var(--form-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow);
+}
+
+[data-theme="light"] .form-group {
+  border: 2px solid var(--border-color);
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+select, input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Add green borders to inputs and selects in light theme */
+[data-theme="light"] select,
+[data-theme="light"] input {
+  border: 2px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Adjust dropdown arrow color for light theme */
+[data-theme="light"] select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2300B894' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ECF0F1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+  padding-right: 2.5rem;
+}
+
+select:hover, input:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+select:focus, input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(0, 184, 148, 0.2);
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background: rgba(0, 184, 148, 0.9);
+}
+
+#generateButton {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  color: var(--text-primary);
+}
+
+.upscale-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.upscale-button {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.upscale-button:hover {
+  background: var(--accent);
+}
+
+.seed-section {
+  margin-top: 2rem;
+  max-width: 100%;
+}
+
+.seed-section h2, .seed-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.seed-input {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+}
+
+#seedInput {
+  width: 100%;
+  min-width: 0; /* Prevent input from overflowing */
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(0, 184, 148, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error-message {
+  background: rgba(214, 48, 49, 0.1);
+  color: var(--error);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .upscale-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Seed History */
+.seed-history {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--surface);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.seed-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.seed-item:last-child {
+  border-bottom: none;
+}
+
+/* Version-specific Fields */
+.version-fields {
+  opacity: 0;
+  height: 0;
+  transition: all 0.3s ease;
+}
+
+.version-fields.visible {
+  opacity: 1;
+  height: auto;
+  margin-top: 1rem;
+}
+
+/* Стили для полей reference */
+#referenceGroup {
+    margin-top: 16px;
+}
+
+#referenceGroup input[type="url"] {
+    margin-bottom: 8px;
+}
+
+#referenceGroup input[type="number"] {
+    width: 100px;
+}
+
+/* Плавное появление/исчезновение полей */
+#seedGroup, #referenceGroup, .seed-section {
+    transition: opacity 0.3s ease-in-out;
+}
+
+#seedGroup:not([style*="display: none"]),
+#referenceGroup:not([style*="display: none"]) {
+    opacity: 1;
+}
+
+#seedGroup[style*="display: none"],
+#referenceGroup[style*="display: none"] {
+    opacity: 0;
+}
+
+/* Стили для параметров Midjourney */
+.mj-params {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+  padding: 16px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+}
+
+.mj-params .form-group {
+  margin-bottom: 0;
+}
+
+/* Компактные селекты для числовых параметров */
+select[name="stylize"],
+select[name="quality"],
+select[name="chaos"] {
+  width: 100%;
+  min-width: 80px;
+}
+
+#result {
+    width: 100%;
+    max-width: 767px; /* Ширина как у формы */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#result img {
+    width: 100%;
+    max-width: 767px;
+    height: auto;
+    display: block;
+}
+
+/* Adjust input fields to prevent overflow */
+input[type="text"],
+input[type="url"],
+input[type="number"] {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+} 
