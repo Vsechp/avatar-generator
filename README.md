@@ -1,6 +1,8 @@
 # Avatar Generator
-
 A web application for generating and customizing avatars using Midjourney API through Discord integration.
+## <img width="1728" alt="Снимок экрана 2025-03-27 в 23 42 08" src="https://github.com/user-attachments/assets/d8dd5529-ab17-4654-b3c7-505133dd80d4" />
+
+## <img width="1728" alt="Снимок экрана 2025-03-27 в 23 42 20" src="https://github.com/user-attachments/assets/48dd3df6-36d6-435c-be2b-f8e10b4ca2c7" />
 
 ## Features
 - Avatar generation with customizable parameters
@@ -26,7 +28,7 @@ A web application for generating and customizing avatars using Midjourney API th
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/avatar-generator.git
+git clone https://github.com/Vsechp/avatar-generator.git
 cd avatar-generator
 ```
 
@@ -66,3 +68,14 @@ npm start
 - `DEBUG`: Enable debug logging (optional)
 
 ## Project Structure 
+
+```
+avatar-generator/
+├── public/                  # Frontend assets
+│   ├── index.html           # Main HTML file for the UI
+│   ├── styles.css           # CSS styles for the application
+│   └── script.js            # Frontend JavaScript code
+├── index.js                 # Main server file with Express and Discord integration
+├── .env                     # Environment variables
+├── package.json             # Project dependencies and scripts
+```
